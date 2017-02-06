@@ -101,7 +101,7 @@ CreateKateSyntaxHighlight := function( arg... )
     template_content := Concatenation( IO_ReadLines( template ) );
     IO_Close( template );
     
-    content := ReplacedString( template_content, "@@@Name@@@", name );
+    content := ReplacedString( template_content, "@@@NAME@@@", name );
     content := ReplacedString( content, "@@@MHIGHLIGHT_ITEMS@@@", complete_item_string );
     
     output := IO_File( file_path, "w" );
