@@ -1,3 +1,14 @@
+#! @Arguments path[, name][, is_documented]
+#! @Returns nothing
+#! @Description
+#!  Creates a syntax highlight definition for kate, having all currently defined functions
+#!  defined for highlighting.
+#!  <A>path</A> specifies the output path for the syntax highlight definition file.
+#!  <A>name</A> (optional) defines a suffix for the name of the language, i.e., the language
+#!  will be displayed in Kate as GAP-<A>name</A>. If no name is given, the Kate language name
+#!  will be GAP.
+#!  If <A>is_documented</A> is <C>true</C>, only documented functions are specified for Syntax highlighting.
+#!  Default is <C>false</C>.
 CreateKateSyntaxHighlight := function( arg... )
     local name, documented, file_path, current_set_global_vars, current_set_functions,
           values_to_add, i, value_of_var, setter_name, tester_name, current_set_strings,
