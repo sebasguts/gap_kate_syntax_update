@@ -50,7 +50,7 @@ CreateKateSyntaxHighlight := function( arg... )
     
     current_set_functions := Filtered( current_set_global_vars, i-> IsBoundGlobal( i ) and IsFunction( ValueGlobal( i ) ) );
     
-    for i in [ "<", "=", "*", "+", "-", ".", ".:=", "/" ] do
+    for i in [ "<", "=", "*", "+", "-", ".", ".:=", "/", "[]", "[]:=", "{}", "{}:=" ] do
         position := Position( current_set_functions, i );
         if position <> fail then
             Remove( current_set_functions, position );
