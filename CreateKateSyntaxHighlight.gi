@@ -95,8 +95,6 @@ CreateKateSyntaxHighlight := function( arg... )
     
     current_set_strings := List( current_set_functions, i -> Concatenation( "			<item>", i, "</item>" ) );
     
-    Error( "" );
-    
     complete_item_string := JoinStringsWithSeparator( current_set_strings, "\n" );
     
     template := IO_File( "gap.xml.template" );
