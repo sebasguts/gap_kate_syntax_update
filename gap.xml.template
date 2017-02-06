@@ -17,14 +17,7 @@
 			<item> do </item>
 			<item> elif </item>
 			<item> else </item>
-			<!-- <item> fi </item> -->
-			<!-- <item> for </item> -->
-			<!-- <item> if </item> -->
-			<!-- <item> od </item> -->
-			<!-- <item> repeat </item> -->
 			<item> then </item>
-			<!-- <item> until </item> -->
-			<!-- <item> while </item> -->
 		</list>
 
 		<list name="logicoperators">
@@ -37,8 +30,6 @@
 		</list>
 
 		<list name="gapkeywords">
-			<!-- <item> function </item> -->
-			<!-- <item> end </item> -->
 			<item> in </item>
 			<item> local </item>
 			<item> rec </item>

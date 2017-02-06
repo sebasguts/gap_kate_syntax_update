@@ -1,7 +1,7 @@
 CreateKateSyntaxHighlight := function( arg... )
     local name, documented, file_path, current_set_global_vars, current_set_functions,
           values_to_add, i, value_of_var, setter_name, tester_name, current_set_strings,
-          complete_item_string, template, template_content,content, output;
+          complete_item_string, template, template_content,content, output, position;
     
     file_path := arg[ 1 ];
     
@@ -39,6 +39,13 @@ CreateKateSyntaxHighlight := function( arg... )
     
     current_set_functions := Filtered( current_set_global_vars, i-> IsBoundGlobal( i ) and IsFunction( ValueGlobal( i ) ) );
     
+    for i in [ "<", "=", "*", "+", "-", ".", ".:=", "/" ] do
+        position := Position( current_set_functions, i );
+        if position <> fail then
+            Remove( current_set_functions, position );
+        fi;
+    od;
+    
     if documented then
         current_set_functions := Filtered( current_set_functions, IsDocumentedWord );
     fi;
@@ -75,7 +82,7 @@ CreateKateSyntaxHighlight := function( arg... )
     
     current_set_functions := Concatenation( current_set_functions, values_to_add );
     
-    current_set_strings := List( current_set_functions, i -> Concatenation( "			<item>", i, "<\\item>" ) );
+    current_set_strings := List( current_set_functions, i -> Concatenation( "			<item>", i, "</item>" ) );
     
     Error( "" );
     
